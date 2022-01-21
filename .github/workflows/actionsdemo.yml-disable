@@ -1,0 +1,12 @@
+name: More action demo
+on: [push]
+jobs:
+  build: # job 的名字
+    runs-on: ubuntu-latest # job 运行的环境
+    steps: # 步骤
+      - uses: actions/checkout@v2
+        with:
+          repository: 'Ambition-J/wechart-web'
+      - name: list files in the repo
+        run: | 
+          ls ${{github.workspace}}
